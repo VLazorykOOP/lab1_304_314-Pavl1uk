@@ -1,0 +1,51 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+    int n,v, max;
+    cout <<"Number of numbers: ";
+    cin >> n;
+    int* A = new int[n];
+    cout <<"Variant: ";
+    cin >> v;
+    if(v==1)
+    {
+        cout << "Array A: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> A[i];
+    } 
+    }
+    else
+    {
+        for(int i = 0; i<n; i++)
+    {
+        A[i] = rand() % 20 - 9; 
+        cout << A[i]<< " ";
+    }
+    }
+    max = A[0];
+    for (int i=0; i<n; i++)
+    {
+    if(A[i]%2==0)
+    {
+    if (A[i] > max)
+    {
+    max = A[i];
+    }
+    }
+    else
+    {
+        break;
+    }
+    }
+    cout << "Max = " << max;
+    delete[] A;
+    return 0;
+}
+int A[n];
+int* A = (int*)malloc(sizeof(int)*n);
+free(A);
